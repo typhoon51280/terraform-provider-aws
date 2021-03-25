@@ -4,6 +4,7 @@ terraform {
 
 provider "aws" {
   region = var.aws_region
+  profile = "test"
 }
 
 data "aws_availability_zones" "available" {}

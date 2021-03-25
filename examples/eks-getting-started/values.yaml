@@ -1,0 +1,45 @@
+# ingress:
+#   enabled: true
+#   web:
+#     precedingPaths:
+#       - path: "/*"
+#         serviceName: "ssl-redirect"
+#         servicePort: "use-annotation"
+#     path: "/web/"
+#     host: "a2513308cdb32472b90683096fff2d5c-1798647130.eu-west-1.elb.amazonaws.com"
+#     tls:
+#       enabled: true
+#     annotations:
+#       kubernetes.io/ingress.class: "nginx"
+#   flower:
+#     path: "/flower/"
+#     host: "a2513308cdb32472b90683096fff2d5c-1798647130.eu-west-1.elb.amazonaws.com"
+#     tls:
+#       enabled: true
+#     annotations:
+#       kubernetes.io/ingress.class: "nginx"
+  
+# web:
+#   baseUrl: "https://a2513308cdb32472b90683096fff2d5c-1798647130.eu-west-1.elb.amazonaws.com/airflow/"
+
+flower:
+  urlPrefix: "/flower"
+
+ingress:
+  enabled: true
+  web:
+    enabled: true
+    path: "/"
+    # host: "a2513308cdb32472b90683096fff2d5c-1798647130.eu-west-1.elb.amazonaws.com"
+    # tls:
+    #   enabled: true
+    annotations:
+      kubernetes.io/ingress.class: "nginx"
+  flower:
+    enabled: false
+    path: "/flower"
+    # host: "a2513308cdb32472b90683096fff2d5c-1798647130.eu-west-1.elb.amazonaws.com"
+    # tls:
+    #   enabled: true
+    annotations:
+      kubernetes.io/ingress.class: "nginx"
